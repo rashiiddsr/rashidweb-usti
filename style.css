@@ -1,0 +1,435 @@
+/* Import Font dan Pengaturan Variabel Warna */
+:root {
+    --usti-gold: #D4A017;
+    --usti-blue: #00539C;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+}
+
+/* Reset dan Pengaturan Dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* Navigasi Modern (Gaya Default Transparan) */
+nav {
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--usti-gold);
+}
+
+/* Bagian Hero yang Menarik */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?technology,desk') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+    animation: fadeInUp 1s ease-out;
+    max-width: 700px; /* Batasi lebar agar tidak terlalu panjang di layar besar */
+    margin: 0 auto;
+}
+
+/* Pengaturan Section Umum */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #333;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+/* Aturan CSS untuk Kampus */
+.kampus-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.kampus-kolom h3 {
+    color: var(--usti-gold);
+    font-size: 1.5em;
+}
+
+/* Paragraf di kolom tengah dibuat rata kiri-kanan */
+.kampus-kolom:nth-child(2) p {
+    text-align: justify;
+}
+
+.logo-kampus {
+    max-width: 200px; /* Ukuran logo disesuaikan */
+    margin: 0 auto;
+}
+
+.foto-dosen {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--usti-gold);
+}
+
+/* Aturan CSS untuk Edukasi & Profil */
+.education-info {
+    text-align: center;
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.foto-profil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Dibuat bulat untuk profil pribadi */
+    border: 4px solid var(--usti-gold);
+    margin-bottom: 15px;
+}
+
+.education-info h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.8em;
+}
+
+.education-info p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+/* Layout Kartu (Card) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: var(--usti-gold);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-content h3, .card-content h4 {
+    margin-top: 0;
+    color: var(--heading-color);
+}
+.card-content .button {
+    margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+}
+
+
+/* Gaya untuk Section CV 2 Kolom */
+#cv {
+    text-align: left;
+}
+#cv h2 {
+    text-align: center;
+}
+.cv-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+.cv-kolom {
+    flex: 1;
+}
+.cv-preview-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+.cv-preview-img:hover {
+    transform: scale(1.03);
+}
+
+/* Gaya untuk Section Kontak 2 Kolom */
+#contact {
+    text-align: left;
+}
+#contact h2 {
+    text-align: center;
+}
+.kontak-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+.kontak-kolom {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+.kontak-kolom h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: var(--usti-gold);
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.social-links a {
+    color: var(--text-color);
+    font-size: 2.2em;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--usti-gold);
+    transform: translateY(-5px);
+}
+/* ====================================================== */
+/* GAYA BARU UNTUK BLOK ALAMAT DI KONTAK        */
+/* ====================================================== */
+
+/* Tautan untuk blok alamat */
+.alamat-link {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Icon sejajar dengan awal teks */
+    gap: 10px; /* Jarak antara ikon dan teks */
+    margin-top: 30px; /* Jarak dari grup ikon sosial media */
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* Efek hover pada link alamat */
+.alamat-link:hover {
+    color: var(--usti-gold);
+}
+
+/* Pengaturan untuk ikon peta */
+.alamat-link i {
+    margin-top: 3px; /* Penyesuaian posisi vertikal ikon */
+    font-size: 1.1em;
+}
+
+/* Pengaturan untuk teks alamat */
+.alamat-link span {
+    text-align: left; /* Teks alamat dibuat rata kiri */
+    max-width: 280px; /* Batasi lebar agar tidak terlalu panjang */
+    line-height: 1.6;
+}
+
+/* Tombol (Button) */
+.button {
+    display: inline-block;
+    background-color: var(--usti-gold);
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid var(--usti-gold);
+    align-self: flex-start; /* Agar tombol tidak meregang */
+}
+.button:hover {
+    background-color: #FAD02E;
+    transform: scale(1.05);
+}
+.button-primary {
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+
+/* ====================================================== */
+/* GAYA UNTUK HALAMAN DETAIL ARTIKEL                 */
+/* ====================================================== */
+.artikel-main {
+    max-width: 800px; /* Lebar konten dibuat ideal untuk membaca */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.artikel-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.artikel-header h1 {
+    font-size: 3em;
+    color: var(--heading-color);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.artikel-meta {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.artikel-body {
+    font-size: 1.15em; /* Ukuran font nyaman untuk dibaca */
+    line-height: 1.8;  /* Jarak antar baris lega */
+    color: var(--text-color);
+        text-align: justify;
+}
+
+.artikel-body h2 {
+    font-size: 1.8em;
+    color: var(--usti-gold);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--surface-color);
+    padding-bottom: 10px;
+}
+
+.artikel-body ul {
+    padding-left: 25px;
+}
+
+.artikel-body li {
+    margin-bottom: 15px;
+}
+
+.tombol-kembali-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #1e1e1e;
+}
+
+/* Animasi Sederhana */
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === ATURAN RESPONSIVE === */
+@media (max-width: 992px) {
+    .kampus-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .cv-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .cv-kolom-teks {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5em; }
+    .nav-links { display: none; } /* Perlu menu hamburger untuk solusi ideal */
+    .kontak-container {
+        grid-template-columns: 1fr;
+    }
+}

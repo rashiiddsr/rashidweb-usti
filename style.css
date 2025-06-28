@@ -248,9 +248,14 @@ section h2 {
 }
 .kontak-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* Ini membuat layout menjadi 1 kolom */
     gap: 30px;
     margin-top: 40px;
+    
+    /* Tambahan agar kolom tidak terlalu lebar di layar besar */
+    max-width: 600px; /* Anda bisa sesuaikan angka ini */
+    margin-left: auto;
+    margin-right: auto;
 }
 .kontak-kolom {
     background-color: var(--surface-color);
